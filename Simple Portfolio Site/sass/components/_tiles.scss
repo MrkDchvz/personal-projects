@@ -1,0 +1,37 @@
+#tiles {
+  display: grid;
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  grid-template-columns: repeat(var(--columns), 1fr);
+  grid-template-rows: repeat(var(--rows), 1fr);
+  z-index: -1;
+}
+
+.tile {
+  background-color: rgb(0, 0, 0);
+  height: calc(100% - 1px);
+  width: calc(100% - 1px);
+}
+
+.overlay {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  z-index: -2;
+  background-image: linear-gradient(to bottom, rgb(0, 0, 0) 30%, rgba(189, 47, 78, 0.932) 50%, rgb(0, 0, 0) 80%);
+  background-size: 100% 600%;
+  animation: bg-animation 7s infinite;
+}
+
+
+
+
+@keyframes bg-animation {
+  0% {
+    background-position: 0% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}

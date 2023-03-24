@@ -1,0 +1,23 @@
+{
+  "name": "simple-portfolio-site",
+  "version": "1.0.0",
+  "description": "A simple project from frontend masters CSS course",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "gulp": "gulp"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^5.0.0",
+    "autoprefixer": "^10.4.14",
+    "cssnano": "^5.1.15",
+    "gulp": "^4.0.2",
+    "gulp-postcss": "^9.0.1",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "postcss": "^8.4.21",
+    "sass": "^1.59.3"
+  }
+}

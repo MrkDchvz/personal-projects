@@ -1,0 +1,66 @@
+@use "sass:math";
+
+// Generate random number
+@function randomNum($number) {
+  // If number is even give random positive number
+  @if($number % 2 == 0) {
+    @return random(40);
+  } 
+  // If number is odd give random negative number
+  @else {
+    @return (random(40) * -1);
+  }
+}
+.intro {
+  margin-left: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  .fancy {
+    color: map-get($colors, "primary" );
+  }
+  &:has(.fancy:hover) > *:not(.fancy:hover) {
+    opacity: .3;
+  }
+
+  &__header {
+    font-size: $base-font-size * 4;
+    font-weight: 400;
+    margin-bottom: 1rem;
+  }
+
+
+
+
+
+// Hover Animations
+
+  // Name 
+  &__header--name:hover {
+    @for $i from 1 through 14 {
+      .fancy-text:nth-child(#{$i})  {
+        transform: translate(20%, randomNum($i) + px) rotate(randomNum($i) + deg);
+      }
+    }
+  }
+  
+  // Verb 
+  &__header--verb:hover {
+    @for $i from 1 through 17 {
+      .fancy-text:nth-child(#{$i})  {
+        transform: translate(20%, randomNum($i) + px) rotate(randomNum($i) + deg);
+      }
+    }
+  }
+}
+
+
+.fancy-text {
+  display: inline-block;
+  transition: transform 350ms ease;
+}
+
+.fancy-margin {
+  margin: 0 .2rem;
+}
+

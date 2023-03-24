@@ -1,0 +1,41 @@
+@each $key, $val in $colors {
+  // Text Colors
+  .text-#{$key} {
+    color: $val;
+  }
+
+  // Text Color Shade
+    @for $i from 1 through 5 {
+        // Light Variant
+      .text-lighten-#{$key}-#{$i} {
+        color: lighten($val, $i * 5%)
+      };
+
+      // Dark Variant
+      .text-darken-#{$key}-#{$i} {
+        color: darken($val, $i * 5%)
+      };
+    }
+
+    // Background colors
+  .bg-#{$key} {
+    background-color: $val;
+  };
+
+  
+      @for $i from 1 through 5 {
+          // Light Variant
+        .bg-lighten-#{$key}-#{$i} {
+          background-color: lighten($val, $i * 5%)
+        };
+  
+        // Dark Variant
+        .bg-darken-#{$key}-#{$i} {
+          background-color: darken($val, $i * 5%)
+        };
+      }
+
+      
+};
+
+

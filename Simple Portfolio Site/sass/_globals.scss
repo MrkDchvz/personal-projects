@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600;800&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2, 
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: map-get($colors , "white");
+  position: relative;
+}
+
+main {
+  display: grid;
+  min-height: 100vh;
+  place-content: center center;
+}
+
+
+
