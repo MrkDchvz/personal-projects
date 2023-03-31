@@ -9,7 +9,6 @@ const createTile = () => {
 
 // Creates divs based on area of the screen 
 const createTiles = quantity => {
-  console.log(quantity);
   Array.from(Array(quantity)).map(() => {
     wrapper.appendChild(createTile());
   })
@@ -21,11 +20,13 @@ const createGrid = () => {
   const size = document.body.clientWidth > 800 ? 100 : 50; 
   rows = Math.ceil(document.body.clientHeight / size);
   columns = Math.ceil(document.body.clientWidth / size); 
+  console.log(document.body.clientHeight);
 
   createTiles(rows * columns);
 
   wrapper.style.setProperty("--columns", columns);
   wrapper.style.setProperty("--rows", rows);
+  
 }
 createGrid();
 window.onresize = () => {createGrid()};

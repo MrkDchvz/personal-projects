@@ -5,24 +5,62 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <!-- CSS -->
   <link rel="stylesheet" href="/css/main.css">
-  <script src="script.js" defer></script>
-  <script src="grid.js" defer></script>
+  <script src="/javascript/grid.js" defer></script>
+  <script src="/javascript/script.js" defer></script>
+  <script src="/javascript/scroll.js" defer></script>
 </head>
 <body>
   <div class="overlay"></div>
   <div id="tiles"></div>
   <main>
+    <header id="header" class="navbar">
+      <h1 class="nav__logo"><i class="nav__icon fa-regular fa-chess-pawn fa-lg"></i><span class="nav__name">Mrkdchvz</span></h1>
+      <nav class="nav">
+          <ul class="nav__list">
+          <li><a href="#" class="nav__link nav__link--link">Projects</a></li>
+          <li><a href="#" class="nav__link nav__link--link">About</a></li>
+          <li><a href="#" class="nav__link nav__link--link">Contact</a></li>
+          <li><a href="#" class="nav__link nav__link--btn bg-primary" role="button"><i class="fa-brands fa-linkedin-in fa-fw" aria-hidden="true"></i><span class="sr-only">Linkedin</span></a></li>
+          <li><a href="#" class="nav__link nav__link--btn bg-primary" role="button"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i><span class="sr-only">github</span></a></li>
+          <li><a href="#" class="nav__link resume bg-accent" role="button">Resume</a></li>
+        </ul>
+      </nav>
+      <aside class="navmobile">
+        <ul class="navmobile__list navmobile__list--main">
+          <li><a href="#" class="navmobile__link navmobile__link--link">Projects</a></li>
+          <li><a href="#" class="navmobile__link navmobile__link--link">About</a></li>
+          <li><a href="#" class="navmobile__link navmobile__link--link">Contact</a></li>
+        </ul>
+        <ul class="navmobile__list navmobile__list--secondary">
+          <div class="navmobile__icons">
+            <li><a href="#" class="navmobile__link navmobile__link--btn bg-primary" role="button"><i class="fa-brands fa-linkedin-in fa-fw" aria-hidden="true"></i><span class="sr-only">Linkedin</span></a></li>
+            <li><a href="#" class="navmobile__link navmobile__link--btn bg-primary" role="button"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i><span class="sr-only">github</span></a></li>
+          </div>
+          <li><a href="#" class="nav__link resume bg-accent" role="button">Resume</a></li>
+        </ul>
+      </aside>
+      <label class="hamburger">
+        <input type="checkbox" class="hamburger__bar"></input>
+      </label>
+    </header>
     <!-- Intro -->
-    <section id="intro" class="intro">
-      <p>Hi my name is</p>
-      <h2 class="intro__header intro__header--name fancy">Mark Dechavez.</h2>
-      <h2 class="intro__header intro__header--verb fancy">I design the Web.</h2>
-      <p class="intro__occupation">I'm a student from a university.</p>
-      <p class="intro__current">Currently, I'm doing programming as a hobby.</p>
+    <section id="intro" class="section intro">
+      <p class="scroll hide">Hi my name is</p>
+      <h2 class="scroll hide intro__header intro__header--name fancy">Mark Dechavez.</h2>
+      <h2 class="scroll hide intro__header intro__header--verb fancy">I design the Web.</h2>
+      <p class=" scroll hide intro__occupation">I'm a student from a university.</p>
+      <p class=" scroll hide intro__current">Currently, I'm doing programming as a hobby.</p>
     </section>
     <!-- Contacts -->
+    <section class="section contact">
+      <h2 class="contact__header scroll hide">Contact Us</h2>
+      <p class="contact__description scroll hide">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos repudiandae minus, asperiores ipsam sequi eum numquam laborum consequatur laboriosam facere.</p>
+      <a class="contact__button" role="button" href="#">Email me</a>
+    </section>
   </main>
 </body>
 </html>

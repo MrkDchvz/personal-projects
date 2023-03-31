@@ -1,0 +1,115 @@
+@use "sass:math";
+
+
+@function findWidth($w, $h) {
+  @return math.hypot($w, $h);
+};
+
+$height: 30;
+$width: 40;
+$bar-height: 5px;
+
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: fixed;
+  left: 6%;
+  width: $width + px;
+  height: $height + px;
+  z-index: 999999;
+  @include sm {
+    display: none;
+  }
+  &::before,
+  &::after {
+    content: "";
+    width: findWidth($width, $height);
+    transform-origin: left center;
+    transition: all 200ms;
+  }
+
+  &__bar {
+    appearance: none;
+    pointer-events: none;
+    outline: none;
+    margin: 0;
+    transition: all 400ms;
+  }
+
+  
+  &::before,
+  &__bar,
+  &::after {
+    display: block;
+    height: $bar-height;
+    border-radius: 9999px;
+    background-color: map-get($colors, "primary");
+    
+  }
+
+  &__bar:checked {
+    opacity: 0;
+  }
+  &:has(.hamburger__bar:checked)::before  {
+    rotate: 45deg;
+    translate: 0 (calc($bar-height / -2.5));
+    
+  }
+  &:has(.hamburger__bar:checked)::after {
+    rotate: -45deg;
+    translate: 0 (calc($bar-height / 2.5));
+
+  }
+}
+
+/* Sidebar
+---------------------------*/
+.navmobile {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 10rem;
+  left: 0;
+  background-color: map-get($colors, "white" );
+  border-right: 1px solid map-get($colors, "primary" );
+  color: map-get($colors, "black");
+  top: 0;
+  padding: 0 1rem;
+  min-height: 100vh;
+  position: absolute;
+  transition: all 300ms ease;
+  position: fixed;
+  translate: -100%;
+  z-index: 999998;
+
+  &__list {
+    @include navlist;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0;
+  }
+
+  &__link {
+    @include navlink;
+    font-size: 1.4rem;
+    &--link {
+      color: map-get($colors, "primary");
+    }
+    &--btn {
+      @include navbtn;
+      padding: .3rem;
+    }
+  }
+
+  &__icons {
+    display: flex;
+    gap: .5rem;
+    margin-bottom: .5rem;
+  }
+}
+
+.navbar:has(.hamburger .hamburger__bar:checked) > .navmobile {
+  translate: 0% 
+}

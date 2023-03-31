@@ -1,0 +1,14 @@
+@media (prefers-reduced-motion: no-preference) {
+  .hide {
+    opacity: 0;
+    filter: blur(2px);
+    transform:  translateX(-10%);
+    transition: all 300ms ease;
+  }
+  
+  .show {
+    opacity: 1;
+    filter: blur(0px);
+    transform:  translateX(0);
+  }
+}

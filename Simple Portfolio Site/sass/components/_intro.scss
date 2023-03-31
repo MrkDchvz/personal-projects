@@ -12,12 +12,16 @@
   }
 }
 .intro {
-  margin-left: 2rem;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  .fancy {
+  justify-content: center;
+  align-items: center;
+
+  
+
+  &__header--name  {
     color: map-get($colors, "primary" );
+    font-weight: 300;
   }
   &:has(.fancy:hover) > *:not(.fancy:hover) {
     opacity: .3;
@@ -25,7 +29,6 @@
 
   &__header {
     font-size: $base-font-size * 4;
-    font-weight: 400;
     margin-bottom: 1rem;
   }
 

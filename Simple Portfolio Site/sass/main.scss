@@ -1,9 +1,13 @@
 @import 'variables';
 @import 'colors';
 @import 'globals';
+@import 'scroll';
+@import 'breakpoints';
 
 
 @import 'components/intro';
 @import 'components/tiles';
 @import 'components/contact';
+@import 'components/navbar';
+@import 'components/hamburger';
 

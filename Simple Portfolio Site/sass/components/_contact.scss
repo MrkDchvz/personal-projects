@@ -1,0 +1,18 @@
+.contact {
+  display: grid;
+  place-content: center;
+  align-items: center;
+  & > * {
+    width: 50%;
+  }
+  &__header {
+    text-align: center;
+    color: map-get($colors, "primary" );
+  }
+
+  &__button {
+    color: map-get($colors, "accent" );
+  }
+} 
+
+
